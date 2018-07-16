@@ -1,0 +1,68 @@
+{
+  "name": "daily-coding",
+  "version": "1.0.0",
+  "description": "Repo to store answers for Daily Coding Problems from dailycodingproblem.com",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register",
+    "test:tdd": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register --watch",
+    "test:only": "./node_modules/.bin/mocha --watch --require babel-register ",
+    "test:coverage": "nyc npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/geandre/daily-coding.git"
+  },
+  "keywords": [
+    "daily",
+    "coding",
+    "problems",
+    "javascript",
+    "functional"
+  ],
+  "author": {
+    "name": "Geandre Miranda",
+    "email": "geandremiranda.ms@gmail.com",
+    "url": "https://geandre.github.io/"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/geandre/daily-coding/issues"
+  },
+  "homepage": "https://github.com/geandre/daily-coding#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.6",
+    "babel-helper-vue-jsx-merge-props": "^2.0.3",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-syntax-jsx": "^6.18.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-plugin-transform-vue-jsx": "^3.7.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-2": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "chai": "^4.1.2",
+    "eslint": "^5.1.0",
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-friendly-formatter": "^4.0.1",
+    "eslint-import-resolver-webpack": "^0.10.1",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "mocha": "^5.2.0",
+    "nyc": "^12.0.2"
+  },
+  "nyc": {
+    "reporter": [
+      "text",
+      "html"
+    ],
+    "exclude": [
+      "tests/**"
+    ]
+  }
+}
