@@ -9,10 +9,12 @@
  * @param {Array<Number>} list
  * @returns {boolean}
  */
-const case1 = (k, list) => list.some(x => list.some(y => x + y === k));
+const case1 = function case1(k, list) {
+  return list.some(x => list.some(y => x + y === k));
+};
 
 /**
- * Problem #1
+ * Problem #2
  *
  * Given an array of integers, return a new array such that each element at
  * index i of the new array is the product of all the numbers in the original
@@ -22,12 +24,14 @@ const case1 = (k, list) => list.some(x => list.some(y => x + y === k));
  * be [120, 60, 40, 30, 24]. If our input was [3, 2, 1], the expected output
  * would be [2, 3, 6].
  *
- * @param {Number} k
  * @param {Array<Number>} list
- * @returns {boolean}
+ * @returns {Array<Number>}
  */
-const case2 = function (list) {
-  return list;
+const case2 = function case2(list) {
+  return list.map((element, mapIndex) => list.reduce((previous, current, reduceIndex) => {
+    if (mapIndex == 0 && reduceIndex == 1) previous = 1;
+    return mapIndex !== reduceIndex ? previous * current : previous;
+  }));
 };
 
 // Module
